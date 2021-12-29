@@ -17,6 +17,7 @@
 		B582ED3C277B5AEF00617D45 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ED3B277B5AEF00617D45 /* Lotto.swift */; };
 		B582ED3E277B5D8F00617D45 /* LottoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ED3D277B5D8F00617D45 /* LottoAPI.swift */; };
 		B582ED43277B6C8B00617D45 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B582ED42277B6C8B00617D45 /* SnapKit */; };
+		B5A9B97C277CA204004B7BBC /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9B97B277CA204004B7BBC /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		B582ED39277B5AE400617D45 /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
 		B582ED3B277B5AEF00617D45 /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
 		B582ED3D277B5D8F00617D45 /* LottoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPI.swift; sourceTree = "<group>"; };
+		B5A9B97B277CA204004B7BBC /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				B582ED36277B5A4E00617D45 /* ViewModel */,
 				B582ED35277B5A4A00617D45 /* Model */,
 				B582ED33277B59F300617D45 /* Project */,
+				B5A9B97B277CA204004B7BBC /* Observable.swift */,
 			);
 			path = MVVM_Lotto;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A9B97C277CA204004B7BBC /* Observable.swift in Sources */,
 				B582ED3C277B5AEF00617D45 /* Lotto.swift in Sources */,
 				B582ED3A277B5AE400617D45 /* LottoViewModel.swift in Sources */,
 				B582ED24277B57AE00617D45 /* LottoViewController.swift in Sources */,
