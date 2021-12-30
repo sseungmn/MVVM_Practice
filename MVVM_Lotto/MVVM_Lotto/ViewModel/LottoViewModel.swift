@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 class LottoViewModel {
+  var maxRound = 995
+  
   var num1 = Observable<Int>(0)
   var num2 = Observable<Int>(0)
   var num3 = Observable<Int>(0)
@@ -31,9 +34,43 @@ class LottoViewModel {
         self?.num5.value = lotto.drwtNo5
         self?.num6.value = lotto.drwtNo6
         self?.num7.value = lotto.bnusNo
-        self?.money.value = "\(lotto.firstWinamnt)원"
+        self?.money.value = self?.format(lotto.firstWinamnt) ?? ""
         self?.date.value = lotto.drwNoDate
       }
     }
+  }
+  
+  func format(_ won: Int) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .decimal
+    return formatter.string(for: won)!
+  }
+}
+
+// MARK: - Extension
+
+// MARK: PickerView
+extension LottoViewModel {
+  func initPickerView(_ pickerView: UIPickerView) {
+    pickerView.selectRow(pickerViewInitValue, inComponent: 0, animated: true)
+    fetchLottoInfo(pickerView.selectedRow(inComponent: 0) + 1)
+  }
+  var pickerViewInitValue: Int {
+    return maxRound - 1
+  }
+  func numberOfComponents() -> Int {
+    return 1
+  }
+  func numberOfRowsInComponent() -> Int {
+    return maxRound
+  }
+  
+  func titleForRow(_ row: Int) -> String? {
+    return "\(row + 1)"
+  }
+  
+  func didSelectRow(_ row: Int) {
+    print("\(row + 1)")
+    fetchLottoInfo(row + 1)
   }
 }

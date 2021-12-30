@@ -24,6 +24,5 @@ class Observable<T> {
   
   func bind(_ completion: @escaping Listener) {
     self.listener = completion
-    print(completion)
   }
 }

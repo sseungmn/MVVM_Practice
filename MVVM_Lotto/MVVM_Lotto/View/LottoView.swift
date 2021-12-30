@@ -10,6 +10,8 @@ import SnapKit
 
 class LottoView: UIView {
   
+  let roundPickerView = UIPickerView()
+  
   let num1Label = UILabel()
   let num2Label = UILabel()
   let num3Label = UILabel()
@@ -50,6 +52,12 @@ class LottoView: UIView {
   }
   
   func setConstraints() {
+    addSubview(roundPickerView)
+        roundPickerView.snp.makeConstraints { make in
+          make.leading.trailing.equalToSuperview()
+          make.top.equalToSuperview().inset(100)
+          make.height.equalTo(200)
+        }
     addSubview(dateLabel)
     dateLabel.snp.makeConstraints { make in
       make.leading.trailing.equalToSuperview()

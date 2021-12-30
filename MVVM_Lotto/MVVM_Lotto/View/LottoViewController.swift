@@ -18,10 +18,15 @@ class LottoViewController: UIViewController {
   }
   override func viewDidLoad() {
     super.viewDidLoad()
+    setConfiguration()
+  }
+  
+  func setConfiguration() {
     bindView()
     
-    let round = 100
-    viewModel.fetchLottoInfo(round)
+    mainView.roundPickerView.delegate = self
+    mainView.roundPickerView.dataSource = self
+    viewModel.initPickerView(mainView.roundPickerView)
   }
   
   func bindView() {
@@ -55,3 +60,20 @@ class LottoViewController: UIViewController {
   }
 }
 
+extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return viewModel.numberOfComponents()
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return viewModel.numberOfRowsInComponent()
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return viewModel.titleForRow(row)
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    viewModel.didSelectRow(row)
+  }
+}
